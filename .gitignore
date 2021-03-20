@@ -139,5 +139,5 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 .idea
-linkedin_email_scraper.py
 
+linkedin_email_scraper.py
