@@ -1,7 +1,8 @@
 from tkinter import *
 
 root = Tk()
-
+#Text Box
+e = Entry(root, width=50, borderwidth=2)
 
 def main():
     # Disable
@@ -9,14 +10,18 @@ def main():
 
     # Set Size/Color
     # my_button = Button(root, text="Click Me!", padx=50, pady=50, fg="white", bg="red")
-    my_button = Button(root, text="Click Me!", command=my_click)
+    e.pack()
+    #Puts insice entry box
+    e.insert(0,"Enter Your Name: ")
+    my_button = Button(root, text="Enter Your Name", command=my_click)
     my_button.pack()
 
     root.mainloop()
 
 
 def my_click():
-    my_label = Label(root, text="Look! I clicked a Button!!")
+    hello = "Hello " + e.get()
+    my_label = Label(root,text=hello)
     my_label.pack()
 
 
