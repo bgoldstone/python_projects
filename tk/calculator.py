@@ -2,7 +2,7 @@ from tkinter import *
 
 root = Tk()
 root.title("Simple Calculator")
-e = Entry(root, width=35, borderwidth=5)
+entry = Entry(root, width=35, borderwidth=5)
 global f_num, math
 f_num = 0
 math = ""
@@ -11,7 +11,7 @@ def main():
     # Disable
     # my_button = Button(root, text="Click Me!", state=DISABLED)
 
-    e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+    entry.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
     # define buttons
     button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
@@ -56,13 +56,13 @@ def main():
 
 
 def button_click(number):
-    current = e.get()
-    e.delete(0, END)
-    e.insert(0, str(current) + str(number))
+    current = entry.get()
+    entry.delete(0, END)
+    entry.insert(0, str(current) + str(number))
 
 
 def button_clear_input():
-    e.delete(0, END)
+    entry.delete(0, END)
     global f_num
     f_num = 0
 
@@ -71,8 +71,8 @@ def add_numbers():
     global f_num
     global math
     math = "addition"
-    f_num += int(e.get())
-    e.delete(0, END)
+    f_num += int(entry.get())
+    entry.delete(0, END)
 
 
 def subtract_numbers():
@@ -80,10 +80,10 @@ def subtract_numbers():
     global math
     math = "subtraction"
     if f_num != 0:
-        f_num -= int(e.get())
+        f_num -= int(entry.get())
     else:
-        f_num = int(e.get())
-    e.delete(0, END)
+        f_num = int(entry.get())
+    entry.delete(0, END)
 
 
 def multiply_numbers():
@@ -91,10 +91,10 @@ def multiply_numbers():
     global math
     math = "multiplication"
     if f_num != 0:
-        f_num *= int(e.get())
+        f_num *= int(entry.get())
     else:
-        f_num = int(e.get())
-    e.delete(0, END)
+        f_num = int(entry.get())
+    entry.delete(0, END)
 
 
 def divide_numbers():
@@ -102,32 +102,32 @@ def divide_numbers():
     global math
     math = "division"
     if f_num != 0:
-        f_num /= int(e.get())
+        f_num /= int(entry.get())
     else:
-        f_num = int(e.get())
-    e.delete(0, END)
+        f_num = int(entry.get())
+    entry.delete(0, END)
 
 
 def equals():
     if math == "addition":
-        s_num = int(e.get())
-        e.delete(0, END)
-        e.insert(0, f_num + s_num)
+        s_num = int(entry.get())
+        entry.delete(0, END)
+        entry.insert(0, f_num + s_num)
 
     elif math == "subtraction":
-        s_num = int(e.get())
-        e.delete(0, END)
-        e.insert(0, f_num - s_num)
+        s_num = int(entry.get())
+        entry.delete(0, END)
+        entry.insert(0, f_num - s_num)
 
     elif math == "multiplication":
-        s_num = int(e.get())
-        e.delete(0, END)
-        e.insert(0, f_num * s_num)
+        s_num = int(entry.get())
+        entry.delete(0, END)
+        entry.insert(0, f_num * s_num)
 
     elif math == "division":
-        s_num = int(e.get())
-        e.delete(0, END)
-        e.insert(0, f_num / s_num)
+        s_num = int(entry.get())
+        entry.delete(0, END)
+        entry.insert(0, f_num / s_num)
 
 
 if __name__ == '__main__':
