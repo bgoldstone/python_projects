@@ -1,8 +1,8 @@
 # extension_renamer.py
-# a simple program to bulk rename file extensions
+# a simple program to bulk rename file extensions in current directory
 # Author: Ben Goldstone
+import os
 def main():
-    import os
 
     extension = input("Enter New File Extension: .")
     for i in os.listdir():
