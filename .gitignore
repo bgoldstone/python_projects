@@ -141,3 +141,4 @@ cython_debug/
 .idea
 
 linkedin_email_scraper.py
+*.csv
