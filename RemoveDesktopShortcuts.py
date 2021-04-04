@@ -1,6 +1,6 @@
 # RemoveDesktopShortcuts.py
 # Removes all desktop shortcuts
-import os, pathlib
+import os
 
 if __name__ == "__main__":
     os.chdir(os.path.expanduser('~') + r'\Desktop')
