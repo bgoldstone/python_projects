@@ -1,8 +1,8 @@
-'''
+"""
 Finds location given a zip code
 
 requires nominatim (pip install nominatim)
-'''
+"""
 from nominatim import Nominatim
 
 
