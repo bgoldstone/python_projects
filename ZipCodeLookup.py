@@ -14,18 +14,21 @@ def main():
     zipCode = input("Enter a US zip code: ")
     # location = json.dumps(api.query(zipCode), indent=2)
     query = api.query(zipCode)
+    isinvalid = True
     if query:
         for loc in query:
             loc = dict(loc)
             # Verify it is a 'postcode' and in 'United States'
-            if ((loc.get('type') == 'postcode') and 'United States' in loc.get('display_name')):
+            if (loc.get('type') == 'postcode') and 'United States' in loc.get('display_name'):
                 location = list(loc.get('display_name').split(',')[0:3])
+                # prints in readable format
+                print(f'The zip code, {zipCode}, is located at: {location[0]},{location[1]},{location[2]}')
+                isinvalid = False;
                 break
-        # prints in readable format
-        print(f'The zip code, {zipCode}, is located at: {location[0]},{location[1]},{location[2]}')
-        # print(f"The zip code {zipCode}, is in: {location[0:3]}")
-    else:
-        print(f'Zip code, {zipCode} is invalid!')
+
+
+    if(isinvalid):
+        print(f'Zip code, {zipCode}, is invalid!')
 
 
 if __name__ == '__main__':
